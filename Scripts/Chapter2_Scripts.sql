@@ -8,4 +8,4 @@ BEGIN
   dbms_output.put_line(coalesce(v_name, 'NO NAME') ||' born on '|| coalesce(v_dob,SYSDATE));
 END;
 
---NO NAME born on 07-6ÔÂ -20
+--NO NAME born on 07-6æœˆ -20
