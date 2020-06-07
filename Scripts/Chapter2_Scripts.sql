@@ -8,7 +8,7 @@ BEGIN
   dbms_output.put_line(coalesce(v_name, 'NO NAME') ||' born on '|| coalesce(v_dob,SYSDATE));
 END;
 
---NO NAME born on 07-6ÔÂ -20
+--NO NAME born on 07-6æœˆ -20
 
 
 SET serveroutput ON;
@@ -43,8 +43,8 @@ BEGIN
   DBMS_OUTPUT.PUT_LINE('v_var3: '||v_var3);
 END;
 /**
-ORA-06502: PL/SQL: Êı×Ö»òÖµ´íÎó :  ÊıÖµ¾«¶ÈÌ«¸ß
-ORA-06512: ÔÚ line 2
+ORA-06502: PL/SQL: æ•°å­—æˆ–å€¼é”™è¯¯ :  æ•°å€¼ç²¾åº¦å¤ªé«˜
+ORA-06512: åœ¨ line 2
 **/
 
 
@@ -117,7 +117,7 @@ END;
 **/
 
 
--- ch02_4b.sql  ÎŞ·¨Ö´ĞĞ ²»¶®ÎÊÌâ³öÔÚÄÄÀï
+-- ch02_4b.sql  æ— æ³•æ‰§è¡Œ ä¸æ‡‚é—®é¢˜å‡ºåœ¨å“ªé‡Œ
 SET serveroutput ON;
 <<outer_block>>
 DECLARE
