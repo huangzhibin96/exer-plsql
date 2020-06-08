@@ -317,6 +317,7 @@ PL/SQL 过程已成功完成。
 
 
 
+
 -- ch04_3a.sql, version 1.0
 SET SERVEROUTPUT ON
 DECLARE
@@ -488,6 +489,41 @@ PL/SQL 过程已成功完成。
 
 
 
+
+DECLARE
+   v_num1 NUMBER := &sv_num1;
+   v_num2 NUMBER := &sv_num2;
+   v_total NUMBER;
+BEGIN
+   IF v_num1 > v_num2 THEN
+      DBMS_OUTPUT.PUT_LINE ('IF part of the outer IF');
+      v_total := v_num1 - v_num2;
+   ELSE
+      DBMS_OUTPUT.PUT_LINE ('ELSE part of the outer IF');
+      v_total := v_num1 + v_num2;
+      
+      IF v_total < 0 THEN
+         DBMS_OUTPUT.PUT_LINE ('Inner IF');
+         v_total := v_total * (-1);
+      END IF;
+   
+   END IF;
+   DBMS_OUTPUT.PUT_LINE ('v_total = '||v_total);
+END;
+
+/**
+Enter value for sv_num1: -4
+old   2:    v_num1  NUMBER := &sv_num1;
+new   2:    v_num1  NUMBER := -4;
+Enter value for sv_num2: 3
+old   3:    v_num2  NUMBER := &sv_num2;
+new   3:    v_num2  NUMBER := 3;
+ELSE part of the outer IF
+Inner IF
+v_total = 1
+   
+PL/SQL procedure successfully completed.
+**/
 
 
 
