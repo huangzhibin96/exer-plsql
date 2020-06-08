@@ -96,8 +96,30 @@ PL/SQL 过程已成功完成。
 **/
 
 
+-- ch04_1b.sql, version 2.0
+SET SERVEROUTPUT ON
+DECLARE
+   v_date DATE := TO_DATE('&sv_user_date', 'DD-MON-YYYY');
+   v_day  VARCHAR2(15); 
+BEGIN
+   v_day := TO_CHAR(v_date, 'DAY');
+   
+   IF v_day IN ('SATURDAY', 'SUNDAY') THEN
+      DBMS_OUTPUT.PUT_LINE (v_date||' falls on weekend'); 
+   END IF; 
+   
+   --- control resumes here
+   DBMS_OUTPUT.PUT_LINE ('Done…');
+END;
 
+/**
+输入 sv_user_date 的值:  13-JAN-2008
+原值    2:    v_date DATE := TO_DATE('&sv_user_date', 'DD-MON-YYYY');
+新值    2:    v_date DATE := TO_DATE('13-JAN-2008', 'DD-MON-YYYY');
+Done…
 
+PL/SQL 过程已成功完成。
+**/
 
 
 
