@@ -528,6 +528,34 @@ PL/SQL procedure successfully completed.
 
 
 
+DECLARE
+   v_letter CHAR(1) := '&sv_letter';
+BEGIN
+   IF (v_letter >= 'A' AND v_letter <= 'Z') OR 
+      (v_letter >= 'a' AND v_letter <= 'z') 
+   THEN 
+      DBMS_OUTPUT.PUT_LINE ('This is a letter');
+   ELSE
+      DBMS_OUTPUT.PUT_LINE ('This is not a letter');
+      
+      IF v_letter BETWEEN '0' and '9' THEN
+         DBMS_OUTPUT.PUT_LINE ('This is a number');
+      ELSE
+         DBMS_OUTPUT.PUT_LINE ('This is not a number');
+      END IF;
+   
+   END IF;
+END;
+
+/**
+Enter value for sv_letter: ?
+old   2:    v_letter CHAR(1) := '&sv_letter';
+new   2:    v_letter CHAR(1) := '?';
+This is not a letter
+This is not a number
+   
+PL/SQL procedure successfully completed.
+**/
 
 
 
